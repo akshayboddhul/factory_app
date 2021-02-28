@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-12 tbl">
+                <h3>Add New Powerloom Status</h3>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <!-- <div class="mb-3">
+                        <label for="looInput" class="form-label">Loom No</label> <br>
+                        {{ form.plno }}                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="looInput" class="form-label">Quality Name</label><br>
+                         {{ form.qty_name }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="looInput" class="form-label">Size</label><br>
+                        {{ form.size }}                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="looInput" class="form-label">Location</label><br>
+                        {{ form.location }}                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="looInput" class="form-label">Upload Image</label><br>
+                        {{ form.image }}                        
+                    </div> -->
+                    <!-- <input type="submit" name="submit" class="btn btn-primary btn-sm">Submit</button> -->
+                    <input type="submit" value="Submit" class="btn btn-primary btn-sm" name="submit">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+   
+
+{% endblock %}

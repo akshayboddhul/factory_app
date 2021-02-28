@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f7fd;
+}
+
+.dash {
+  /* box-shadow: 0 0 2rem 0 rgba(196, 215, 238, 0.5); */
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  border-radius: 10px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  border: none;
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.tbl {
+  background-color: #fff;
+  padding: 30px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+}
+
+.tbl > h3,
+.card-title {
+  font-weight: bold;
+}
+
+.badge-text {
+  color: #fff;
+}
+.bg-success {
+  background-color: #cef8bf !important;
+  color: #15812e !important;
+}
+
+.breadcrumb {
+  padding: 1rem 1rem;
+  list-style: none;
+  background-color: transparent;
+}
+
+.login-frm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.new-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  width: 350px;
+}
+
+.towel-img {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+@media only screen and (min-width: 360px) {
+  .dash-card {
+    padding: 15px;
+    text-align: center;
+    max-width: 100%;
+  }
+}

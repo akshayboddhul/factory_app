@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+<div class="container p-4">
+  <div class="row pb-4">
+      <div class="col-md-3 dash-card">
+          <div class="card text-white bg-primary dash">
+              <div class="card-header">
+                Factory-1
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">350Kg</h3>
+                <p class="card-text">Yesterday Production</p>
+                
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3 dash-card">
+          <div class="card text-white bg-danger dash">
+              <div class="card-header">
+                Factory-3
+              </div>
+              <div class="card-body">
+                  <h3 class="card-title">350Kg</h3>
+                  <p class="card-text">Yesterday Production</p>
+                
+              </div>
+            </div>
+      </div>
+      <div class="col-md-3 dash-card">
+          <div class="card text-white bg-info dash">
+              <div class="card-header">
+                Factory-4
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">350Kg</h3>
+                <p class="card-text">Yesterday Production</p>
+                
+              </div>
+            </div>
+      </div>
+      <div class="col-md-3 dash-card">
+          <div class="card text-white bg-secondary dash">
+              <div class="card-header">
+                Factory-5
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">350Kg</h3>
+                <p class="card-text">Yesterday Production</p>
+                
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 tbl">
+          <h3>Powerloom Status</h3>
+          <a href="{% url 'addNew' %}" class="btn btn-primary mt-2 mb-2">Add New</a>
+          
+          <table id="example" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>NO.</th>
+                      <th>Image</th>
+                      <th>Quality</th>
+                      <th>Size</th>
+                      <th>Location</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for loom in looms %}
+                
+                  <tr>
+                      <td>{{ loom.plno }}</td>
+                      <td><img src="{{ loom.image.url }}" alt="Towel Image" srcset="" class="towel-img"></td>
+                      <td>{{ loom.qty_name }}</td>
+                      <td>{{ loom.size }}</td>
+                      <td>{{ loom.location }}</td>
+                      <td>
+                        {% if loom.status == 'Active' %}
+                          <span class="badge badge-text rounded-pill bg-success">{{ loom.status }}</span>
+                        {% elif loom.status == 'Not Active' %}
+                          <span class="badge badge-text rounded-pill bg-danger">{{ loom.status }}</span>
+                        {% endif %}
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">View</a>
+                      
+                      
+                        <a href="#" class="btn btn-secondary btn-sm">Update</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                      </td>
+                      
+                  </tr>
+                {% endfor %}
+                  
+                  
+              </tfoot>
+          </table>
+      </div>
+      <!-- <div class="col-md-4">
+          <div class="card dash-card">
+              <div class="card-body">
+                  <h4 class="card-title">
+                      Production Chart
+                  </h4>
+                  <div>
+                      <canvas id="myChart" width="400" height="400"></canvas>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+  </div>
+</div>
+
+
+
+    
+{% endblock %}
